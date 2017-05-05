@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C22788541EBBF86300F1E7B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22788531EBBF86300F1E7B9 /* AppDelegate.swift */; };
-		C22788561EBBF86300F1E7B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22788551EBBF86300F1E7B9 /* ViewController.swift */; };
 		C22788591EBBF86300F1E7B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C22788571EBBF86300F1E7B9 /* Main.storyboard */; };
 		C227885C1EBBF86300F1E7B9 /* NickRaptisPullRequestViewer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C227885A1EBBF86300F1E7B9 /* NickRaptisPullRequestViewer.xcdatamodeld */; };
 		C227885E1EBBF86300F1E7B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C227885D1EBBF86300F1E7B9 /* Assets.xcassets */; };
 		C22788611EBBF86300F1E7B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C227885F1EBBF86300F1E7B9 /* LaunchScreen.storyboard */; };
 		C227886C1EBBF86300F1E7B9 /* NickRaptisPullRequestViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C227886B1EBBF86300F1E7B9 /* NickRaptisPullRequestViewerTests.swift */; };
 		C22788771EBBF86300F1E7B9 /* NickRaptisPullRequestViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22788761EBBF86300F1E7B9 /* NickRaptisPullRequestViewerUITests.swift */; };
+		C227888C1EBBFF4A00F1E7B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22788871EBBFF4A00F1E7B9 /* AppDelegate.swift */; };
+		C227888D1EBBFF4A00F1E7B9 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22788881EBBFF4A00F1E7B9 /* Device.swift */; };
+		C227888E1EBBFF4A00F1E7B9 /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22788891EBBFF4A00F1E7B9 /* FileUtils.swift */; };
+		C227888F1EBBFF4A00F1E7B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C227888A1EBBFF4A00F1E7B9 /* ViewController.swift */; };
+		C22788901EBBFF4A00F1E7B9 /* WebFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C227888B1EBBFF4A00F1E7B9 /* WebFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +39,6 @@
 
 /* Begin PBXFileReference section */
 		C22788501EBBF86300F1E7B9 /* NickRaptisPullRequestViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NickRaptisPullRequestViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C22788531EBBF86300F1E7B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C22788551EBBF86300F1E7B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C22788581EBBF86300F1E7B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C227885B1EBBF86300F1E7B9 /* NickRaptisPullRequestViewer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NickRaptisPullRequestViewer.xcdatamodel; sourceTree = "<group>"; };
 		C227885D1EBBF86300F1E7B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +50,11 @@
 		C22788721EBBF86300F1E7B9 /* NickRaptisPullRequestViewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NickRaptisPullRequestViewerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C22788761EBBF86300F1E7B9 /* NickRaptisPullRequestViewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickRaptisPullRequestViewerUITests.swift; sourceTree = "<group>"; };
 		C22788781EBBF86300F1E7B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C22788871EBBFF4A00F1E7B9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C22788881EBBFF4A00F1E7B9 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		C22788891EBBFF4A00F1E7B9 /* FileUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
+		C227888A1EBBFF4A00F1E7B9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C227888B1EBBFF4A00F1E7B9 /* WebFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,7 @@
 		C22788471EBBF86300F1E7B9 = {
 			isa = PBXGroup;
 			children = (
+				C22788861EBBFF4A00F1E7B9 /* Classes */,
 				C22788521EBBF86300F1E7B9 /* NickRaptisPullRequestViewer */,
 				C227886A1EBBF86300F1E7B9 /* NickRaptisPullRequestViewerTests */,
 				C22788751EBBF86300F1E7B9 /* NickRaptisPullRequestViewerUITests */,
@@ -99,8 +106,6 @@
 		C22788521EBBF86300F1E7B9 /* NickRaptisPullRequestViewer */ = {
 			isa = PBXGroup;
 			children = (
-				C22788531EBBF86300F1E7B9 /* AppDelegate.swift */,
-				C22788551EBBF86300F1E7B9 /* ViewController.swift */,
 				C22788571EBBF86300F1E7B9 /* Main.storyboard */,
 				C227885D1EBBF86300F1E7B9 /* Assets.xcassets */,
 				C227885F1EBBF86300F1E7B9 /* LaunchScreen.storyboard */,
@@ -126,6 +131,19 @@
 				C22788781EBBF86300F1E7B9 /* Info.plist */,
 			);
 			path = NickRaptisPullRequestViewerUITests;
+			sourceTree = "<group>";
+		};
+		C22788861EBBFF4A00F1E7B9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C22788871EBBFF4A00F1E7B9 /* AppDelegate.swift */,
+				C22788881EBBFF4A00F1E7B9 /* Device.swift */,
+				C22788891EBBFF4A00F1E7B9 /* FileUtils.swift */,
+				C227888A1EBBFF4A00F1E7B9 /* ViewController.swift */,
+				C227888B1EBBFF4A00F1E7B9 /* WebFetcher.swift */,
+			);
+			name = Classes;
+			path = NickRaptisPullRequestViewer/Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +280,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C22788561EBBF86300F1E7B9 /* ViewController.swift in Sources */,
+				C227888F1EBBFF4A00F1E7B9 /* ViewController.swift in Sources */,
+				C227888D1EBBFF4A00F1E7B9 /* Device.swift in Sources */,
+				C227888C1EBBFF4A00F1E7B9 /* AppDelegate.swift in Sources */,
 				C227885C1EBBF86300F1E7B9 /* NickRaptisPullRequestViewer.xcdatamodeld in Sources */,
-				C22788541EBBF86300F1E7B9 /* AppDelegate.swift in Sources */,
+				C22788901EBBFF4A00F1E7B9 /* WebFetcher.swift in Sources */,
+				C227888E1EBBFF4A00F1E7B9 /* FileUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +532,7 @@
 				C227887D1EBBF86300F1E7B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C227887E1EBBF86300F1E7B9 /* Build configuration list for PBXNativeTarget "NickRaptisPullRequestViewerTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +541,7 @@
 				C22788801EBBF86300F1E7B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C22788811EBBF86300F1E7B9 /* Build configuration list for PBXNativeTarget "NickRaptisPullRequestViewerUITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +550,7 @@
 				C22788831EBBF86300F1E7B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

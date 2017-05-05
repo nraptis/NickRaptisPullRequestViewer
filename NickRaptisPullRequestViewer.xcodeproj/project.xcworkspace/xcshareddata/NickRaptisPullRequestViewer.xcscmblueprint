@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "FB072CC6D31F146D0BB8A6451D82DD638D21E2F7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "FB072CC6D31F146D0BB8A6451D82DD638D21E2F7" : 9223372036854775807,
+    "B4E0AE778F2C601848B4768AEF1BF34ADCEC29CB" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "785E919B-99D8-4E72-AADC-464A9CC74358",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "FB072CC6D31F146D0BB8A6451D82DD638D21E2F7" : "NickRaptisPullRequestViewer\/",
+    "B4E0AE778F2C601848B4768AEF1BF34ADCEC29CB" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "NickRaptisPullRequestViewer",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "NickRaptisPullRequestViewer.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/nraptis\/Swifticles.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B4E0AE778F2C601848B4768AEF1BF34ADCEC29CB"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/nraptis\/NickRaptisPullRequestViewer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FB072CC6D31F146D0BB8A6451D82DD638D21E2F7"
+    }
+  ]
+}
