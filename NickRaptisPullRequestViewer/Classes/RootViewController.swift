@@ -10,11 +10,18 @@ import UIKit
 
 //https://api.github.com/repositories?since=20000
 
+class RootViewController: UIViewController {
 
-class ViewController: UIViewController {
-
+    @IBOutlet weak var mainNavigationController: UINavigationController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        //main_navigation_controller
+        
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
         
         //let ser = AFHTTPRequestSerializer()
@@ -26,6 +33,10 @@ class ViewController: UIViewController {
         //token ee80354928933bd4361e2894596f73dbd26362a1
         
         
+        //var name: String = "Dolphin"
+        //var truncated = name.substring(to: name.index(before: name.endIndex))
+        //print(name)      // "Dolphin"
+        //print(truncated) // "Dolphi"
         
         
         
