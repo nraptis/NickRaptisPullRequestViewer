@@ -1,0 +1,6 @@
+framework module Pods_NickRaptisPullRequestViewerUITests {
+  umbrella header "Pods-NickRaptisPullRequestViewerUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
