@@ -8,8 +8,11 @@
 
 import UIKit
 
+//API Token: 82b2ba9cb27fa8f073180d93f600405bf2f9ca15
+
 //https://api.github.com/repositories?since=20000
 
+//curl -u nraptis:82b2ba9cb27fa8f073180d93f600405bf2f9ca15 https://api.github.com/user
 
 class ViewController: UIViewController {
 
