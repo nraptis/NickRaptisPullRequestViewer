@@ -20,6 +20,8 @@ class ViewController: UIViewController {
         
         //let ser = AFHTTPRequestSerializer()
         
+        //Test text 1
+        
         //https://api.github.com/user
         
         //Authorization
