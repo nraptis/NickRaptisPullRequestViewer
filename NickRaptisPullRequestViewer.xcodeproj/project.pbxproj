@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C221C2C01EBD3A9B00660CAC /* RepoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C221C2BF1EBD3A9B00660CAC /* RepoList.swift */; };
 		C22788591EBBF86300F1E7B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C22788571EBBF86300F1E7B9 /* Main.storyboard */; };
 		C227885C1EBBF86300F1E7B9 /* NickRaptisPullRequestViewer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C227885A1EBBF86300F1E7B9 /* NickRaptisPullRequestViewer.xcdatamodeld */; };
 		C227885E1EBBF86300F1E7B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C227885D1EBBF86300F1E7B9 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C221C2BF1EBD3A9B00660CAC /* RepoList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoList.swift; sourceTree = "<group>"; };
 		C22788501EBBF86300F1E7B9 /* NickRaptisPullRequestViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NickRaptisPullRequestViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C22788581EBBF86300F1E7B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C227885B1EBBF86300F1E7B9 /* NickRaptisPullRequestViewer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NickRaptisPullRequestViewer.xcdatamodel; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				C28B772F1EBD24C40021939D /* UsersList.swift */,
 				C28B77311EBD2FB10021939D /* GithubUser.swift */,
 				C28B77331EBD2FBF0021939D /* GithubRepo.swift */,
+				C221C2BF1EBD3A9B00660CAC /* RepoList.swift */,
 			);
 			name = Classes;
 			path = NickRaptisPullRequestViewer/Classes;
@@ -240,6 +243,7 @@
 				TargetAttributes = {
 					C227884F1EBBF86300F1E7B9 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 2GG555KD5G;
 						ProvisioningStyle = Automatic;
 					};
 					C22788661EBBF86300F1E7B9 = {
@@ -402,6 +406,7 @@
 				C28B77301EBD24C40021939D /* UsersList.swift in Sources */,
 				C227888F1EBBFF4A00F1E7B9 /* RootViewController.swift in Sources */,
 				C28B77341EBD2FBF0021939D /* GithubRepo.swift in Sources */,
+				C221C2C01EBD3A9B00660CAC /* RepoList.swift in Sources */,
 				C227888D1EBBFF4A00F1E7B9 /* Device.swift in Sources */,
 				C227888C1EBBFF4A00F1E7B9 /* AppDelegate.swift in Sources */,
 				C28B77321EBD2FB10021939D /* GithubUser.swift in Sources */,
@@ -562,9 +567,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2GG555KD5G;
 				INFOPLIST_FILE = NickRaptisPullRequestViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.demo.test.NickRaptisPullRequestViewer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.froggy.moon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -574,9 +580,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2GG555KD5G;
 				INFOPLIST_FILE = NickRaptisPullRequestViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.demo.test.NickRaptisPullRequestViewer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.froggy.moon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -589,7 +596,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = NickRaptisPullRequestViewerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.demo.test.NickRaptisPullRequestViewerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.froggy.moon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NickRaptisPullRequestViewer.app/NickRaptisPullRequestViewer";
@@ -603,7 +610,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = NickRaptisPullRequestViewerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.demo.test.NickRaptisPullRequestViewerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.froggy.moon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NickRaptisPullRequestViewer.app/NickRaptisPullRequestViewer";

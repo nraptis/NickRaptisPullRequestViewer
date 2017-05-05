@@ -8,9 +8,11 @@
 
 import UIKit
 
-class UsersList: UIViewController, WebFetcherDelegate {
+class UsersList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var users = [GithubUser]()
     
     internal var _usersFetcher: WebFetcher?
     var usersFetcher: WebFetcher {
@@ -22,29 +24,13 @@ class UsersList: UIViewController, WebFetcherDelegate {
         return _usersFetcher!
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(red: 1.0, green: 0.25, blue: 0.25, alpha: 0.6)
-        
+        tableView.dataSource = self
+        tableView.delegate = self
         
         usersFetcher.fetch(GithubAPI.usersURL)
-        
-        //GithubAPI : NSObject
-        //{
-        //static let shared
-            
-        //usersFetcher.fetch(  )
-        
-        
-        
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func fetchDidSucceed(fetcher: WebFetcher, result: WebResult) {
@@ -57,42 +43,38 @@ class UsersList: UIViewController, WebFetcherDelegate {
             
             if let userArray = data as? [[String: AnyObject]] {
                 
+                users.removeAll()
+                
                 for userInfo in userArray {
                     
-                    print("===============")
-                    print(userInfo)
+                    let newUser = GithubUser()
+                    if let _id = userInfo["id"] as? Int {
+                        newUser.id = _id
+                    }
                     
-                    /*
-                    "avatar_url" = "https://avatars3.githubusercontent.com/u/1?v=3";
-                    "events_url" = "https://api.github.com/users/mojombo/events{/privacy}";
-                    "followers_url" = "https://api.github.com/users/mojombo/followers";
-                    "following_url" = "https://api.github.com/users/mojombo/following{/other_user}";
-                    "gists_url" = "https://api.github.com/users/mojombo/gists{/gist_id}";
-                    "gravatar_id" = "";
-                    "html_url" = "https://github.com/mojombo";
-                    id = 1;
-                    login = mojombo;
-                    "organizations_url" = "https://api.github.com/users/mojombo/orgs";
-                    "received_events_url" = "https://api.github.com/users/mojombo/received_events";
-                    "repos_url" = "https://api.github.com/users/mojombo/repos";
-                    "site_admin" = 0;
-                    "starred_url" = "https://api.github.com/users/mojombo/starred{/owner}{/repo}";
-                    "subscriptions_url" = "https://api.github.com/users/mojombo/subscriptions";
-                    type = User;
-                    url = "https://api.github.com/users/mojombo";
-                    */
+                    if let _login = userInfo["login"] as? String {
+                        newUser.login = _login
+                    }
                     
+                    //Valid user has a login.
+                    if newUser.login.characters.count > 0 {
+                        
+                        print("Appending User (\(newUser.login) id:\(newUser.id))")
+                        users.append(newUser)
+                    }
                     
                 }
                 
+                
+                
+            } else {
+                print("Error Out")
             }
-            
-            
-            
         } else {
             print("Error Out")
-            
         }
+        
+        tableView.reloadData()
     }
     
     func fetchDidFail(fetcher: WebFetcher, result: WebResult) {
@@ -100,6 +82,35 @@ class UsersList: UIViewController, WebFetcherDelegate {
         
     }
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return users.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let user = users[indexPath.row]
+        var cell = tableView.dequeueReusableCell(withIdentifier: "user_cell")
+        if cell === nil {
+            cell = UITableViewCell(style: .default, reuseIdentifier: "user_cell")
+        }
+        cell!.textLabel!.text = user.login
+        return cell!
+    }
+    
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
+        if indexPath.row >= 0 && indexPath.row < users.count {
+            let user = users[indexPath.row]
+            
+            print("Selected User[\(user.login)]")
+            GithubAPI.shared.currentUser = user
+            
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

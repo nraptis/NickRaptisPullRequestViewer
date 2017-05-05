@@ -21,16 +21,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Som-Iy-43f">
-                                <rect key="frame" x="16" y="89" width="343" height="274"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Som-Iy-43f">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.49965840541254225" blue="0.13270634277418081" alpha="0.76624036815068497" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Som-Iy-43f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3Nu-fO-eCf"/>
+                            <constraint firstAttribute="trailing" secondItem="Som-Iy-43f" secondAttribute="trailing" id="lBQ-hz-0xe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Som-Iy-43f" secondAttribute="bottom" id="rdG-7t-phl"/>
+                            <constraint firstItem="Som-Iy-43f" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="spH-f5-NfD"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="v5V-wW-PYV"/>
+                    <connections>
+                        <outlet property="tableView" destination="Som-Iy-43f" id="EFK-f5-btZ"/>
+                        <segue destination="ZTa-cu-qit" kind="show" id="RHV-eb-V0j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

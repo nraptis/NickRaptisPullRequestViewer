@@ -10,9 +10,20 @@ import UIKit
 
 //https://api.github.com/users/nraptis/repos
 
+
+enum GithubNotification:String {
+    case usersUpdated = "GithubNotification.usersUpdated"
+    case reposUpdated = "GithubNotification.reposUpdated"
+}
+
+
 class GithubAPI : NSObject
 {
     static let shared = GithubAPI()
+    
+    static var token: String {
+        return "ee80354928933bd4361e2894596f73dbd26362a1"
+    }
     
     static var baseURL:String {
         return "https://api.github.com/"
@@ -22,9 +33,7 @@ class GithubAPI : NSObject
         return "\(baseURL)users"
     }
 
-    var currentUser: String {
-        return ""
-    }
+    var currentUser: GithubUser?
     
     var currentRepo: String {
         return ""
@@ -33,6 +42,16 @@ class GithubAPI : NSObject
     var currentPullRequest: String {
         return ""
     }
+    
+    
+    
+    
+    
+    //GithubUser: NSObject {
+    
+    //var id: Int
+    //var login: String = "";
+    
     
 }
 
