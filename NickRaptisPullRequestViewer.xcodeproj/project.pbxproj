@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9106D06A39C874AE5456E98A /* Pods_NickRaptisPullRequestViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E3BA668C31B89CCB79687F0 /* Pods_NickRaptisPullRequestViewer.framework */; };
-		99E3FEB72C4B8F0E6266B7E0 /* Pods_NickRaptisPullRequestViewerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 532CB9EDBA66F0B5ADB3B7D1 /* Pods_NickRaptisPullRequestViewerUITests.framework */; };
-		9C1A4EF9B1E0B88BDBF82EEC /* Pods_NickRaptisPullRequestViewerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29988A6F16E514AF16DEB23C /* Pods_NickRaptisPullRequestViewerTests.framework */; };
+		C221C2C01EBD3A9B00660CAC /* RepoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C221C2BF1EBD3A9B00660CAC /* RepoList.swift */; };
 		C22788591EBBF86300F1E7B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C22788571EBBF86300F1E7B9 /* Main.storyboard */; };
 		C227885C1EBBF86300F1E7B9 /* NickRaptisPullRequestViewer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C227885A1EBBF86300F1E7B9 /* NickRaptisPullRequestViewer.xcdatamodeld */; };
 		C227885E1EBBF86300F1E7B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C227885D1EBBF86300F1E7B9 /* Assets.xcassets */; };
@@ -19,8 +17,12 @@
 		C227888C1EBBFF4A00F1E7B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22788871EBBFF4A00F1E7B9 /* AppDelegate.swift */; };
 		C227888D1EBBFF4A00F1E7B9 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22788881EBBFF4A00F1E7B9 /* Device.swift */; };
 		C227888E1EBBFF4A00F1E7B9 /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22788891EBBFF4A00F1E7B9 /* FileUtils.swift */; };
-		C227888F1EBBFF4A00F1E7B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C227888A1EBBFF4A00F1E7B9 /* ViewController.swift */; };
+		C227888F1EBBFF4A00F1E7B9 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C227888A1EBBFF4A00F1E7B9 /* RootViewController.swift */; };
 		C22788901EBBFF4A00F1E7B9 /* WebFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C227888B1EBBFF4A00F1E7B9 /* WebFetcher.swift */; };
+		C28B772E1EBD19CA0021939D /* GithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28B772D1EBD19CA0021939D /* GithubAPI.swift */; };
+		C28B77301EBD24C40021939D /* UsersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28B772F1EBD24C40021939D /* UsersList.swift */; };
+		C28B77321EBD2FB10021939D /* GithubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28B77311EBD2FB10021939D /* GithubUser.swift */; };
+		C28B77341EBD2FBF0021939D /* GithubRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28B77331EBD2FBF0021939D /* GithubRepo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,14 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		29988A6F16E514AF16DEB23C /* Pods_NickRaptisPullRequestViewerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NickRaptisPullRequestViewerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		532CB9EDBA66F0B5ADB3B7D1 /* Pods_NickRaptisPullRequestViewerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NickRaptisPullRequestViewerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		716865EBAEB8994C98410E1A /* Pods-NickRaptisPullRequestViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NickRaptisPullRequestViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NickRaptisPullRequestViewer/Pods-NickRaptisPullRequestViewer.debug.xcconfig"; sourceTree = "<group>"; };
-		84F6833E2B3F61B70CFF0A9B /* Pods-NickRaptisPullRequestViewerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NickRaptisPullRequestViewerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NickRaptisPullRequestViewerUITests/Pods-NickRaptisPullRequestViewerUITests.release.xcconfig"; sourceTree = "<group>"; };
-		9E3BA668C31B89CCB79687F0 /* Pods_NickRaptisPullRequestViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NickRaptisPullRequestViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A425CF6DE863F02D09947291 /* Pods-NickRaptisPullRequestViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NickRaptisPullRequestViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-NickRaptisPullRequestViewer/Pods-NickRaptisPullRequestViewer.release.xcconfig"; sourceTree = "<group>"; };
-		AB47CB2CE1859E599D07F975 /* Pods-NickRaptisPullRequestViewerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NickRaptisPullRequestViewerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NickRaptisPullRequestViewerTests/Pods-NickRaptisPullRequestViewerTests.release.xcconfig"; sourceTree = "<group>"; };
-		BE6827E2B625BF601338E532 /* Pods-NickRaptisPullRequestViewerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NickRaptisPullRequestViewerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NickRaptisPullRequestViewerTests/Pods-NickRaptisPullRequestViewerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C221C2BF1EBD3A9B00660CAC /* RepoList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoList.swift; sourceTree = "<group>"; };
 		C22788501EBBF86300F1E7B9 /* NickRaptisPullRequestViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NickRaptisPullRequestViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C22788581EBBF86300F1E7B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C227885B1EBBF86300F1E7B9 /* NickRaptisPullRequestViewer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NickRaptisPullRequestViewer.xcdatamodel; sourceTree = "<group>"; };
@@ -64,9 +59,12 @@
 		C22788871EBBFF4A00F1E7B9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C22788881EBBFF4A00F1E7B9 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		C22788891EBBFF4A00F1E7B9 /* FileUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
-		C227888A1EBBFF4A00F1E7B9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C227888A1EBBFF4A00F1E7B9 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		C227888B1EBBFF4A00F1E7B9 /* WebFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebFetcher.swift; sourceTree = "<group>"; };
-		E39A1EF433610DEF45022917 /* Pods-NickRaptisPullRequestViewerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NickRaptisPullRequestViewerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NickRaptisPullRequestViewerUITests/Pods-NickRaptisPullRequestViewerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C28B772D1EBD19CA0021939D /* GithubAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubAPI.swift; sourceTree = "<group>"; };
+		C28B772F1EBD24C40021939D /* UsersList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersList.swift; sourceTree = "<group>"; };
+		C28B77311EBD2FB10021939D /* GithubUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubUser.swift; sourceTree = "<group>"; };
+		C28B77331EBD2FBF0021939D /* GithubRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +72,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9106D06A39C874AE5456E98A /* Pods_NickRaptisPullRequestViewer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +79,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C1A4EF9B1E0B88BDBF82EEC /* Pods_NickRaptisPullRequestViewerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,26 +86,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99E3FEB72C4B8F0E6266B7E0 /* Pods_NickRaptisPullRequestViewerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		430D2A36A782897150AE6CA9 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				716865EBAEB8994C98410E1A /* Pods-NickRaptisPullRequestViewer.debug.xcconfig */,
-				A425CF6DE863F02D09947291 /* Pods-NickRaptisPullRequestViewer.release.xcconfig */,
-				BE6827E2B625BF601338E532 /* Pods-NickRaptisPullRequestViewerTests.debug.xcconfig */,
-				AB47CB2CE1859E599D07F975 /* Pods-NickRaptisPullRequestViewerTests.release.xcconfig */,
-				E39A1EF433610DEF45022917 /* Pods-NickRaptisPullRequestViewerUITests.debug.xcconfig */,
-				84F6833E2B3F61B70CFF0A9B /* Pods-NickRaptisPullRequestViewerUITests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		C22788471EBBF86300F1E7B9 = {
 			isa = PBXGroup;
 			children = (
@@ -118,7 +100,6 @@
 				C227886A1EBBF86300F1E7B9 /* NickRaptisPullRequestViewerTests */,
 				C22788751EBBF86300F1E7B9 /* NickRaptisPullRequestViewerUITests */,
 				C22788511EBBF86300F1E7B9 /* Products */,
-				430D2A36A782897150AE6CA9 /* Pods */,
 				EC17766D46F8E7E7997F7199 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -169,8 +150,13 @@
 				C22788871EBBFF4A00F1E7B9 /* AppDelegate.swift */,
 				C22788881EBBFF4A00F1E7B9 /* Device.swift */,
 				C22788891EBBFF4A00F1E7B9 /* FileUtils.swift */,
-				C227888A1EBBFF4A00F1E7B9 /* ViewController.swift */,
+				C227888A1EBBFF4A00F1E7B9 /* RootViewController.swift */,
 				C227888B1EBBFF4A00F1E7B9 /* WebFetcher.swift */,
+				C28B772D1EBD19CA0021939D /* GithubAPI.swift */,
+				C28B772F1EBD24C40021939D /* UsersList.swift */,
+				C28B77311EBD2FB10021939D /* GithubUser.swift */,
+				C28B77331EBD2FBF0021939D /* GithubRepo.swift */,
+				C221C2BF1EBD3A9B00660CAC /* RepoList.swift */,
 			);
 			name = Classes;
 			path = NickRaptisPullRequestViewer/Classes;
@@ -179,9 +165,6 @@
 		EC17766D46F8E7E7997F7199 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9E3BA668C31B89CCB79687F0 /* Pods_NickRaptisPullRequestViewer.framework */,
-				29988A6F16E514AF16DEB23C /* Pods_NickRaptisPullRequestViewerTests.framework */,
-				532CB9EDBA66F0B5ADB3B7D1 /* Pods_NickRaptisPullRequestViewerUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -193,12 +176,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C227887B1EBBF86300F1E7B9 /* Build configuration list for PBXNativeTarget "NickRaptisPullRequestViewer" */;
 			buildPhases = (
-				199C44FE3E279996D02A199A /* [CP] Check Pods Manifest.lock */,
 				C227884C1EBBF86300F1E7B9 /* Sources */,
 				C227884D1EBBF86300F1E7B9 /* Frameworks */,
 				C227884E1EBBF86300F1E7B9 /* Resources */,
-				3C27C417B3B53275649B5E1F /* [CP] Embed Pods Frameworks */,
-				46B73039A066830E1C841CA8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -263,6 +243,7 @@
 				TargetAttributes = {
 					C227884F1EBBF86300F1E7B9 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 2GG555KD5G;
 						ProvisioningStyle = Automatic;
 					};
 					C22788661EBBF86300F1E7B9 = {
@@ -325,21 +306,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		199C44FE3E279996D02A199A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		26CB625009FED5EF7A9246D3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -353,36 +319,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NickRaptisPullRequestViewerTests/Pods-NickRaptisPullRequestViewerTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3C27C417B3B53275649B5E1F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NickRaptisPullRequestViewer/Pods-NickRaptisPullRequestViewer-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		46B73039A066830E1C841CA8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NickRaptisPullRequestViewer/Pods-NickRaptisPullRequestViewer-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		58B4844F872C002C948BBF6F /* [CP] Check Pods Manifest.lock */ = {
@@ -467,11 +403,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C227888F1EBBFF4A00F1E7B9 /* ViewController.swift in Sources */,
+				C28B77301EBD24C40021939D /* UsersList.swift in Sources */,
+				C227888F1EBBFF4A00F1E7B9 /* RootViewController.swift in Sources */,
+				C28B77341EBD2FBF0021939D /* GithubRepo.swift in Sources */,
+				C221C2C01EBD3A9B00660CAC /* RepoList.swift in Sources */,
 				C227888D1EBBFF4A00F1E7B9 /* Device.swift in Sources */,
 				C227888C1EBBFF4A00F1E7B9 /* AppDelegate.swift in Sources */,
+				C28B77321EBD2FB10021939D /* GithubUser.swift in Sources */,
 				C227885C1EBBF86300F1E7B9 /* NickRaptisPullRequestViewer.xcdatamodeld in Sources */,
 				C22788901EBBFF4A00F1E7B9 /* WebFetcher.swift in Sources */,
+				C28B772E1EBD19CA0021939D /* GithubAPI.swift in Sources */,
 				C227888E1EBBFF4A00F1E7B9 /* FileUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -624,12 +565,12 @@
 		};
 		C227887C1EBBF86300F1E7B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 716865EBAEB8994C98410E1A /* Pods-NickRaptisPullRequestViewer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2GG555KD5G;
 				INFOPLIST_FILE = NickRaptisPullRequestViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.demo.test.NickRaptisPullRequestViewer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.froggy.moon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -637,12 +578,12 @@
 		};
 		C227887D1EBBF86300F1E7B9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A425CF6DE863F02D09947291 /* Pods-NickRaptisPullRequestViewer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2GG555KD5G;
 				INFOPLIST_FILE = NickRaptisPullRequestViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.demo.test.NickRaptisPullRequestViewer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.froggy.moon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -650,13 +591,12 @@
 		};
 		C227887F1EBBF86300F1E7B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE6827E2B625BF601338E532 /* Pods-NickRaptisPullRequestViewerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = NickRaptisPullRequestViewerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.demo.test.NickRaptisPullRequestViewerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.froggy.moon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NickRaptisPullRequestViewer.app/NickRaptisPullRequestViewer";
@@ -665,13 +605,12 @@
 		};
 		C22788801EBBF86300F1E7B9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB47CB2CE1859E599D07F975 /* Pods-NickRaptisPullRequestViewerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = NickRaptisPullRequestViewerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.demo.test.NickRaptisPullRequestViewerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.froggy.moon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NickRaptisPullRequestViewer.app/NickRaptisPullRequestViewer";
@@ -680,7 +619,6 @@
 		};
 		C22788821EBBF86300F1E7B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E39A1EF433610DEF45022917 /* Pods-NickRaptisPullRequestViewerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = NickRaptisPullRequestViewerUITests/Info.plist;
@@ -694,7 +632,6 @@
 		};
 		C22788831EBBF86300F1E7B9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84F6833E2B3F61B70CFF0A9B /* Pods-NickRaptisPullRequestViewerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = NickRaptisPullRequestViewerUITests/Info.plist;

@@ -43,64 +43,6 @@ class WebFetcher : NSObject, URLSessionDelegate
         return ""
     }
     
-    /*
-    class func encrypt(string: String) -> String {
-        if let data = string.data(using: .utf8), let keyData = encryptionKey.data(using: .utf8) {
-            let paddingSize =  kCCBlockSizeAES128 - (data.count % 16);
-            let dataLength = data.count + paddingSize
-            var bytes = [UInt8](data)
-            for _ in 0..<paddingSize {
-                bytes.append(0)
-            }
-            let cryptData = NSMutableData(length: dataLength)!
-            let keyLength: Int = size_t(kCCKeySizeAES256)
-            let operation: CCOperation = UInt32(kCCEncrypt)
-            let algoritm: CCAlgorithm = UInt32(kCCAlgorithmAES128)
-            let options: CCOptions   = UInt32(0)
-            let iv =  "514276FF19BEFFAD"
-            var numBytesEncrypted :size_t = 0
-            let cryptStatus = CCCrypt(operation, algoritm, options,
-                                      [UInt8](keyData), keyLength,
-                                      iv,
-                                      //[UInt8](data), data.count,
-                bytes, bytes.count,
-                cryptData.mutableBytes, cryptData.length, &numBytesEncrypted)
-            if UInt32(cryptStatus) == UInt32(kCCSuccess) {
-                cryptData.length = Int(numBytesEncrypted)
-                let base64cryptString = cryptData.base64EncodedData(options: Data.Base64EncodingOptions(rawValue: 0))
-                if let result = String(data: base64cryptString, encoding: .utf8) {
-                    return result
-                }
-            }
-        }
-        return string
-    }
-    
-    class func decrypt(string: String) -> String {
-        if let data = Data(base64Encoded: string, options: Data.Base64DecodingOptions(rawValue: 0)), let keyData = encryptionKey.data(using: .utf8) {
-            let cryptData = NSMutableData(length: Int(data.count) + kCCBlockSizeAES128)!
-            let keyLength: Int = size_t(kCCKeySizeAES256)
-            let operation :CCOperation = UInt32(kCCDecrypt)
-            let algoritm :CCAlgorithm = UInt32(kCCAlgorithmAES128)
-            let options :CCOptions = UInt32(0)
-            let iv = "514276FF19BEFFAD"
-            var numBytesEncrypted :size_t = 0
-            let cryptStatus = CCCrypt(operation, algoritm, options,
-                                      [UInt8](keyData), keyLength,
-                                      iv,
-                                      [UInt8](data), data.count,
-                                      cryptData.mutableBytes, cryptData.length, &numBytesEncrypted)
-            if UInt32(cryptStatus) == UInt32(kCCSuccess) {
-                cryptData.length = Int(numBytesEncrypted)
-                if let result = String(data: cryptData as Data, encoding: .utf8) {
-                    return result
-                }
-            }
-        }
-        return string
-    }
-    */
-    
     func clearTask() {
         if let task = sessionDataTask {
             task.cancel()

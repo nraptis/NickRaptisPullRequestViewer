@@ -7,15 +7,21 @@
 //
 
 import UIKit
-import AFNetworking
 
 //https://api.github.com/repositories?since=20000
 
+class RootViewController: UIViewController {
 
-class ViewController: UIViewController {
-
+    @IBOutlet weak var mainNavigationController: UINavigationController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        //main_navigation_controller
+        
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
         
         //let ser = AFHTTPRequestSerializer()
@@ -27,11 +33,18 @@ class ViewController: UIViewController {
         //token ee80354928933bd4361e2894596f73dbd26362a1
         
         
-        let urlString = "http://example.com/file.php"
+        //var name: String = "Dolphin"
+        //var truncated = name.substring(to: name.index(before: name.endIndex))
+        //print(name)      // "Dolphin"
+        //print(truncated) // "Dolphi"
+        
+        
+        
+        
+        let urlString = "https://api.github.com/user"
+        
+        
         let dictionary = ["key1": [1,2,3], "key2": [2,4,6]]
-        
-        var error: NSError?
-        
         var data:Data? = nil
         
         do {
@@ -63,6 +76,46 @@ class ViewController: UIViewController {
         }).resume()
         
         
+        
+        
+        
+        
+        
+        /*
+        
+        let urlString = "http://example.com/file.php"
+        let dictionary = ["key1": [1,2,3], "key2": [2,4,6]]
+        
+        var data:Data? = nil
+        
+        do {
+            try data = JSONSerialization.data(withJSONObject: dictionary, options: .prettyPrinted)
+        } catch {
+            print("Failz1")
+        }
+        
+        let jsonString = String(data: data!, encoding: .utf8)
+        let parameters = ["data" :  jsonString!]
+        
+        let request = NSMutableURLRequest(url: URL(string: urlString)!)
+        request.httpMethod = "POST"
+        
+        var bodyData: Data? = nil
+        do {
+            try bodyData = JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
+        } catch {
+            print("Failz2")
+        }
+        
+        request.httpBody = bodyData
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("\(bodyData!.count)", forHTTPHeaderField: "Content-Length")
+        
+        URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+            let result = String(data: data!, encoding: .utf8)// NSString(data: data, encoding: NSUTF8StringEncoding)!
+            print(result ?? "FAILZ3")
+        }).resume()
+        */
         
         
     }
