@@ -19,6 +19,8 @@ enum GithubNotification:String {
 
 class GithubAPI : NSObject
 {
+    
+    //API object singleton.
     static let shared = GithubAPI()
     
     static var token: String {
@@ -52,26 +54,14 @@ class GithubAPI : NSObject
     //https://api.github.com/repos/nraptis/NickRaptisPullRequestViewer/pulls
     //https://api.github.com/users/nraptis/repos
     
-    //mojombo
-    
+    //The currently selected user. (which we will view repositories for)
     var currentUser: GithubUser?
     
+    //The currently selected repo. (which we will view pull requests for)
     var currentRepo: GithubRepo?
     
-    var currentPullRequest: String {
-        return ""
-    }
-    
-    
-    
-    
-    
-    //GithubUser: NSObject {
-    
-    //var id: Int
-    //var login: String = "";
-    
-    
+    //The currently selected pull. (which we will view diff for)
+    var currentPull: GithubPull?
 }
 
 

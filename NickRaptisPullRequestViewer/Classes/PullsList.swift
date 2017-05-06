@@ -1,5 +1,5 @@
 //
-//  ReposList.swift
+//  PullsList.swift
 //  NickRaptisPullRequestViewer
 //
 //  Created by Raptis, Nicholas on 5/5/17.
@@ -8,19 +8,19 @@
 
 import UIKit
 
-class ReposList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITableViewDataSource {
+class PullsList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var repos = [GithubRepo]()
+    var pulls = [GithubPull]()
     
-    internal var _reposFetcher: WebFetcher?
-    var reposFetcher: WebFetcher {
-        if _reposFetcher === nil {
-            _reposFetcher = WebFetcher()
-            _reposFetcher!.delegate = self
+    internal var _pullsFetcher: WebFetcher?
+    var pullsFetcher: WebFetcher {
+        if _pullsFetcher === nil {
+            _pullsFetcher = WebFetcher()
+            _pullsFetcher!.delegate = self
         }
-        return _reposFetcher!
+        return _pullsFetcher!
     }
     
     override func viewDidLoad() {
@@ -29,27 +29,30 @@ class ReposList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
         tableView.dataSource = self
         tableView.delegate = self
         
-        reposFetcher.fetch(GithubAPI.shared.reposURL)
+        pullsFetcher.fetch(GithubAPI.shared.pullsURL)
     }
     
     func fetchDidSucceed(fetcher: WebFetcher, result: WebResult) {
         
-        print("Repos - Fetch Succeeded [\(result)]")
+        print("Pulls - Fetch Succeeded [\(result)]")
         
-        if let data = FileUtils.parseJSON(reposFetcher.data) {
-            if let reposArray = data as? [[String: AnyObject]] {
-                //Remove all previous repos if there are any..
-                repos.removeAll()
+        if let data = FileUtils.parseJSON(pullsFetcher.data) {
+            
+            print("\(data)")
+            
+            if let pullsArray = data as? [[String: AnyObject]] {
+                //Remove all previous pulls if there are any..
+                pulls.removeAll()
                 
                 //Parse repo list.
-                for repoInfo in reposArray {
-                    let repo = GithubRepo()
+                for repoInfo in pullsArray {
+                    let pull = GithubPull()
                     //Load the JSON data.
-                    repo.load(repoInfo)
+                    pull.load(repoInfo)
                     
                     //If it's valid, add it to the list.
-                    if repo.name.characters.count > 0 {
-                        repos.append(repo)
+                    if pull.title.characters.count > 0 {
+                        pulls.append(pull)
                     }
                 }
             }
@@ -58,22 +61,24 @@ class ReposList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
     }
     
     func fetchDidFail(fetcher: WebFetcher, result: WebResult) {
-        print("Users - Fetch Failed [\(result)]")
+        print("Pulls - Fetch Failed [\(result)]")
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repos.count
+        return pulls.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let repo = repos[indexPath.row]
-        var cell = tableView.dequeueReusableCell(withIdentifier: "repo_cell") as? RepoTableViewCell
+        let pull = pulls[indexPath.row]
+        var cell = tableView.dequeueReusableCell(withIdentifier: "pull_cell") as? PullTableViewCell
         if cell === nil {
-            cell = RepoTableViewCell(style: .default, reuseIdentifier: "repo_cell")
+            cell = PullTableViewCell(style: .default, reuseIdentifier: "pull_cell")
         }
-        cell!.labelName!.text = repo.name
-        cell!.labelLanuage!.text = repo.language
+        
+        cell!.labelTitle.text = pull.title
+        cell!.labelState.text = pull.state
+        
         return cell!
     }
     
@@ -82,16 +87,11 @@ class ReposList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         print("Selected Index Section[\(indexPath.section)] Row[\(indexPath.row)]")
-        
-        if indexPath.row >= 0 && indexPath.row < repos.count {
-            let repo = repos[indexPath.row]
-            
-            print("Selected Repo[\(repo.name)]")
-            GithubAPI.shared.currentRepo = repo
-            
-            self.performSegue(withIdentifier: "repos_list_pulls_list", sender: self)
+        if indexPath.row >= 0 && indexPath.row < pulls.count {
+            let pull = pulls[indexPath.row]
+            print("Selected Pull[\(pull.title)]")
+            GithubAPI.shared.currentPull = pull
         }
     }
     
