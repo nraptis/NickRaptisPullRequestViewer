@@ -41,25 +41,17 @@ class UsersList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
             if let userArray = data as? [[String: AnyObject]] {
                 
                 users.removeAll()
-                
                 for userInfo in userArray {
                     
                     let newUser = GithubUser()
-                    
-                    //newUser.loa
-                    
+                    newUser.load(userInfo)
                     
                     //Valid user has a login.
                     if newUser.login.characters.count > 0 {
-                        
                         print("Appending User (\(newUser.login) id:\(newUser.id))")
                         users.append(newUser)
                     }
-                    
                 }
-                
-                
-                
             } else {
                 print("Error Out")
             }
@@ -72,7 +64,6 @@ class UsersList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
     
     func fetchDidFail(fetcher: WebFetcher, result: WebResult) {
         print("Users - Fetch Failed [\(result)]")
-        
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -103,7 +94,10 @@ class UsersList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
             print("Selected User[\(user.login)]")
             GithubAPI.shared.currentUser = user
             
-            tableView.deselectRow(at: indexPath, animated: true)
+            for i:Int in 0..<users.count {
+                let ip = IndexPath(row: i, section: 0)
+                tableView.deselectRow(at: ip, animated: true)
+            }
             
             self.performSegue(withIdentifier: "users_list_repos_list", sender: self)
         }

@@ -12,7 +12,7 @@
         <!--Users List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="user_list" id="BYZ-38-t0r" customClass="UsersList" customModule="NickRaptisPullRequestViewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="user_list" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="UsersList" customModule="NickRaptisPullRequestViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -48,7 +48,7 @@
         <!--Repos List-->
         <scene sceneID="idX-0y-WkN">
             <objects>
-                <viewController storyboardIdentifier="repos_list" id="ZTa-cu-qit" customClass="ReposList" customModule="NickRaptisPullRequestViewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="repos_list" automaticallyAdjustsScrollViewInsets="NO" id="ZTa-cu-qit" customClass="ReposList" customModule="NickRaptisPullRequestViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Kcg-Pm-lk6"/>
                         <viewControllerLayoutGuide type="bottom" id="NyW-vK-Rp4"/>
@@ -72,11 +72,30 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="zm0-Wu-B1r" id="P5Z-wM-F1i"/>
+                        <segue destination="1GC-k6-SGJ" kind="show" identifier="repos_list_pulls_list" id="itf-bh-l6R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pOk-hx-5nJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1901.5999999999999" y="123.68815592203899"/>
+        </scene>
+        <!--Pulls List-->
+        <scene sceneID="GnR-dc-nip">
+            <objects>
+                <viewController id="1GC-k6-SGJ" customClass="PullsList" customModule="NickRaptisPullRequestViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oPH-k1-jsW"/>
+                        <viewControllerLayoutGuide type="bottom" id="WeT-q9-NQa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UCt-WD-KNY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1oy-KQ-PL1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2711" y="124"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ND4-n7-mks">
