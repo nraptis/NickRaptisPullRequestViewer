@@ -25,19 +25,38 @@ class GithubAPI : NSObject
         return "ee80354928933bd4361e2894596f73dbd26362a1"
     }
     
-    static var baseURL:String {
-        return "https://api.github.com/"
+    var baseURL:String {
+        return "https://api.github.com"
     }
     
-    static var usersURL: String {
-        return "\(baseURL)users"
+    var usersURL: String {
+        return "\(baseURL)/users"
     }
 
+    var reposURL: String {
+        if let user = currentUser {
+            return "\(baseURL)/users/\(user.login)/repos"
+        } else {
+            return "\(baseURL)/users/nraptis/repos"
+        }
+    }
+    
+    var pullsURL: String {
+        if let user = currentUser, let repo = currentRepo {
+            return "\(baseURL)/repos/\(user.login)/\(repo.name)/pulls"
+        } else {
+            return "\(baseURL)/repos/nraptis/NickRaptisPullRequestViewer/pulls"
+        }
+    }
+    
+    //https://api.github.com/repos/nraptis/NickRaptisPullRequestViewer/pulls
+    //https://api.github.com/users/nraptis/repos
+    
+    //mojombo
+    
     var currentUser: GithubUser?
     
-    var currentRepo: String {
-        return ""
-    }
+    var currentRepo: GithubRepo?
     
     var currentPullRequest: String {
         return ""

@@ -1,5 +1,5 @@
 //
-//  RepoList.swift
+//  GithubPull.swift
 //  NickRaptisPullRequestViewer
 //
 //  Created by Raptis, Nicholas on 5/5/17.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class RepoList: NSObject {
+class GithubPull: NSObject {
 
 }
