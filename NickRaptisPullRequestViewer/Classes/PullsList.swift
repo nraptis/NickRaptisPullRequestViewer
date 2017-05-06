@@ -68,18 +68,19 @@ class PullsList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return pulls.count
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let pull = pulls[indexPath.row]
-        var cell = tableView.dequeueReusableCell(withIdentifier: "pull_cell") as? PullTableViewCell
-        if cell === nil {
-            cell = PullTableViewCell(style: .default, reuseIdentifier: "pull_cell")
+
+    func insaneReplacementFunction() {
+        
+        var a: Int = 5
+        var b: Int = 22
+        
+        while a < 56 {
+            a += b
+            b -= 4
         }
         
-        cell!.labelTitle.text = pull.title
-        cell!.labelState.text = pull.state
+        print("Never Ends?")
         
-        return cell!
     }
     
     public func numberOfSections(in tableView: UITableView) -> Int {
@@ -110,14 +111,18 @@ class PullsList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return nil
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+
+    
+    func sampleFunctionTwo(fetcher: WebFetcher, result: WebResult) {
+        print("line 1")
+        print("line 2")
+        print("line 3")
+        print("line 4")
+        print("line 5")
+        print("line 6")
+    }
+    
+    
+    
     
 }
