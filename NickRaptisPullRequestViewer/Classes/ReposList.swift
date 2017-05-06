@@ -14,6 +14,15 @@ class ReposList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
     
     var repos = [GithubRepo]()
     
+    var additions1: Int = 0
+    var additions2: Int = 1
+    var additions3: Int = 2
+    var additions4: Int = 3
+    var additions5: Int = 2
+    var additions6: Int = 1
+    var additions7: Int = 0
+    
+    
     internal var _reposFetcher: WebFetcher?
     var reposFetcher: WebFetcher {
         if _reposFetcher === nil {
@@ -110,6 +119,22 @@ class ReposList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return nil
     }
+    
+    func test123() {
+        
+        //Inset code here...
+        //Do some other stuff...
+        
+        var h: CGFloat = 10.0
+        
+        h = CGFloat(sqrtf(Float(h)))
+        
+        h *= 2
+        
+        print("h = \(h)")
+        
+    }
+    
     /*
      // MARK: - Navigation
      
@@ -119,5 +144,7 @@ class ReposList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
      // Pass the selected object to the new view controller.
      }
      */
+    
+    
     
 }
