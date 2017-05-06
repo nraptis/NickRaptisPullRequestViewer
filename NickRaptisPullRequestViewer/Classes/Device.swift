@@ -78,4 +78,17 @@ class Device
         if orientation == .landscapeLeft || orientation == .landscapeRight { return true }
         return false
     }
+    
+    class var isInsane: Bool {
+        return true
+    }
+    
+    class var isSilly: Bool {
+        return true
+    }
+    
+    class var isRude: Bool {
+        return false
+    }
+    
 }
