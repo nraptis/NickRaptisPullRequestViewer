@@ -84,7 +84,7 @@ class UsersList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
         return 1
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         print("Selected Index Section[\(indexPath.section)] Row[\(indexPath.row)]")
         
