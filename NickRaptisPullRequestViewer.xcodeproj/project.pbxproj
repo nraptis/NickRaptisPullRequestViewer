@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D7A30641EBD766B00C1ACEC /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7A30631EBD766B00C1ACEC /* RepoTableViewCell.swift */; };
 		C221C2C21EBD413D00660CAC /* ReposList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C221C2C11EBD413D00660CAC /* ReposList.swift */; };
 		C221C2C41EBD4E0300660CAC /* GithubPull.swift in Sources */ = {isa = PBXBuildFile; fileRef = C221C2C31EBD4E0300660CAC /* GithubPull.swift */; };
 		C221C2C61EBD4E1500660CAC /* GithubDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = C221C2C51EBD4E1500660CAC /* GithubDiff.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D7A30631EBD766B00C1ACEC /* RepoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
 		C221C2C11EBD413D00660CAC /* ReposList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReposList.swift; sourceTree = "<group>"; };
 		C221C2C31EBD4E0300660CAC /* GithubPull.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubPull.swift; sourceTree = "<group>"; };
 		C221C2C51EBD4E1500660CAC /* GithubDiff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubDiff.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				C221C2C31EBD4E0300660CAC /* GithubPull.swift */,
 				C221C2C51EBD4E1500660CAC /* GithubDiff.swift */,
 				C221C2C71EBD53A400660CAC /* PullsList.swift */,
+				0D7A30631EBD766B00C1ACEC /* RepoTableViewCell.swift */,
 			);
 			name = Classes;
 			path = NickRaptisPullRequestViewer/Classes;
@@ -420,6 +423,7 @@
 				C227888D1EBBFF4A00F1E7B9 /* Device.swift in Sources */,
 				C221C2C81EBD53A400660CAC /* PullsList.swift in Sources */,
 				C227888C1EBBFF4A00F1E7B9 /* AppDelegate.swift in Sources */,
+				0D7A30641EBD766B00C1ACEC /* RepoTableViewCell.swift in Sources */,
 				C28B77321EBD2FB10021939D /* GithubUser.swift in Sources */,
 				C221C2C41EBD4E0300660CAC /* GithubPull.swift in Sources */,
 				C227885C1EBBF86300F1E7B9 /* NickRaptisPullRequestViewer.xcdatamodeld in Sources */,

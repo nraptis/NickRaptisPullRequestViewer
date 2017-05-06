@@ -37,9 +37,6 @@ class ReposList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
         print("Repos - Fetch Succeeded [\(result)]")
         
         if let data = FileUtils.parseJSON(reposFetcher.data) {
-            
-            print("Repo Data:\n\(data)")
-            
             if let reposArray = data as? [[String: AnyObject]] {
                 
                 repos.removeAll()
@@ -73,11 +70,12 @@ class ReposList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let repo = repos[indexPath.row]
-        var cell = tableView.dequeueReusableCell(withIdentifier: "repo_cell")
+        var cell = tableView.dequeueReusableCell(withIdentifier: "repo_cell") as? RepoTableViewCell
         if cell === nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: "repo_cell")
+            cell = RepoTableViewCell(style: .default, reuseIdentifier: "repo_cell")
         }
-        cell!.textLabel!.text = "REPO"
+        cell!.labelName!.text = repo.name
+        cell!.labelLanuage!.text = repo.language
         return cell!
     }
     
