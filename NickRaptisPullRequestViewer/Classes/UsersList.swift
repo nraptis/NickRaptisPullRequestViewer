@@ -41,6 +41,12 @@ class UsersList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
             if let userArray = data as? [[String: AnyObject]] {
                 
                 users.removeAll()
+                
+                let nraptis = GithubUser()
+                nraptis.login = "nraptis"
+                nraptis.id = 4358345
+                users.append(nraptis)
+                
                 for userInfo in userArray {
                     
                     let newUser = GithubUser()

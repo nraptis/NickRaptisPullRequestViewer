@@ -62,15 +62,15 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="repo_cell" rowHeight="60" id="auK-gh-sOf" customClass="RepoTableViewCell" customModule="NickRaptisPullRequestViewer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="repo_cell" id="auK-gh-sOf" customClass="RepoTableViewCell" customModule="NickRaptisPullRequestViewer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="auK-gh-sOf" id="820-5O-8Uy">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIx-5F-k5V">
-                                                    <rect key="frame" x="16" y="9.5" width="295" height="42"/>
+                                                    <rect key="frame" x="16" y="1" width="295" height="42"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="42" id="810-3I-xTZ"/>
                                                     </constraints>
@@ -79,7 +79,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znL-hf-1C0">
-                                                    <rect key="frame" x="319" y="8" width="44" height="44"/>
+                                                    <rect key="frame" x="319" y="-0.5" width="44" height="44.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="b2a-72-epq"/>
                                                         <constraint firstAttribute="height" constant="44" id="g5C-Nx-XAJ"/>
@@ -126,7 +126,7 @@
         <!--Pulls List-->
         <scene sceneID="GnR-dc-nip">
             <objects>
-                <viewController id="1GC-k6-SGJ" customClass="PullsList" customModule="NickRaptisPullRequestViewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="1GC-k6-SGJ" customClass="PullsList" customModule="NickRaptisPullRequestViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oPH-k1-jsW"/>
                         <viewControllerLayoutGuide type="bottom" id="WeT-q9-NQa"/>
@@ -134,12 +134,70 @@
                     <view key="view" contentMode="scaleToFill" id="UCt-WD-KNY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v2M-7d-7QD">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pull_cell" id="YEh-r4-xXO" customClass="PullTableViewCell" customModule="NickRaptisPullRequestViewer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YEh-r4-xXO" id="bJ0-wZ-K8E">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qn-az-ggH">
+                                                    <rect key="frame" x="16" y="1" width="295" height="42"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="42" id="inW-Uw-8Uv"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQp-z7-94d">
+                                                    <rect key="frame" x="319" y="-0.5" width="44" height="44.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="13B-By-Vba"/>
+                                                        <constraint firstAttribute="height" constant="44" id="BCF-s9-xEF"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eQp-z7-94d" firstAttribute="leading" secondItem="0qn-az-ggH" secondAttribute="trailing" constant="8" id="3Zy-LD-bmp"/>
+                                                <constraint firstItem="0qn-az-ggH" firstAttribute="centerY" secondItem="bJ0-wZ-K8E" secondAttribute="centerY" id="7o6-gq-Ye7"/>
+                                                <constraint firstItem="eQp-z7-94d" firstAttribute="centerY" secondItem="bJ0-wZ-K8E" secondAttribute="centerY" id="mg8-rM-6rR"/>
+                                                <constraint firstAttribute="trailing" secondItem="eQp-z7-94d" secondAttribute="trailing" constant="12" id="pwc-uo-LJ7"/>
+                                                <constraint firstItem="0qn-az-ggH" firstAttribute="leading" secondItem="bJ0-wZ-K8E" secondAttribute="leadingMargin" constant="8" id="qSR-M4-wMH"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="labelState" destination="eQp-z7-94d" id="L1J-ex-5NO"/>
+                                            <outlet property="labelTitle" destination="0qn-az-ggH" id="ZqR-7B-0o3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="v2M-7d-7QD" firstAttribute="leading" secondItem="UCt-WD-KNY" secondAttribute="leading" id="5Op-79-pgB"/>
+                            <constraint firstItem="v2M-7d-7QD" firstAttribute="top" secondItem="oPH-k1-jsW" secondAttribute="bottom" id="R5p-mw-buP"/>
+                            <constraint firstItem="WeT-q9-NQa" firstAttribute="top" secondItem="v2M-7d-7QD" secondAttribute="bottom" id="eLR-Mx-YFi"/>
+                            <constraint firstAttribute="trailing" secondItem="v2M-7d-7QD" secondAttribute="trailing" id="quf-s6-FxR"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="v2M-7d-7QD" id="uE4-m8-DV4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1oy-KQ-PL1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2711" y="124"/>
+            <point key="canvasLocation" x="2709.5999999999999" y="123.68815592203899"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ND4-n7-mks">

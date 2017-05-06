@@ -9,5 +9,46 @@
 import UIKit
 
 class GithubPull: NSObject {
-
+    
+    var id: Int = -1
+    
+    var title: String = ""
+    var state: String = ""
+    
+    var diffURL: String = ""
+    
+    
+    func load(_ info: [String: AnyObject]) {
+        if let _id = info["id"] as? Int {
+            id = _id
+        }
+        if let _title = info["title"] as? String {
+            title = _title
+        }
+        if let _state = info["state"] as? String {
+            state = _state
+        }
+        if let _diffURL = info["diff_url"] as? String {
+            diffURL = _diffURL
+        }
+        
+        // = open;
+        // = "Test Branch 2 Pull Request";
+        //"" = "https://github.com/nraptis/NickRaptisPullRequestViewer/pull/3.diff";
+    
+    }
+    
+    
+    //state = open;
+    //title = "Test Branch 2 Pull Request";
+    //"diff_url" = "https://github.com/nraptis/NickRaptisPullRequestViewer/pull/3.diff";
+    
+    
+    
+    
+    
+    
+    
+    
 }
+
