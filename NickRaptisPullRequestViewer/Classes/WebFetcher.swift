@@ -87,6 +87,8 @@ class WebFetcher : NSObject, URLSessionDelegate
             return
         }
         
+        print("Fetching URL: \(urlString!)")
+        
         //Sanity check.
         guard let url = URL(string: urlString!) else {
             isActive = false

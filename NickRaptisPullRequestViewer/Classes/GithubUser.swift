@@ -13,4 +13,13 @@ class GithubUser: NSObject {
     var id: Int = -1
     var login: String = ""
     
+    func load(_ info: [String: AnyObject]) {
+        if let _id = info["id"] as? Int {
+            id = _id
+        }
+        if let _login = info["login"] as? String {
+            login = _login
+        }
+    }
+    
 }
