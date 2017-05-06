@@ -24,7 +24,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Som-Iy-43f">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="sectionIndexBackgroundColor" red="1" green="0.49965840541254225" blue="0.13270634277418081" alpha="0.76624036815068497" colorSpace="custom" customColorSpace="sRGB"/>
+                                <sections/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -38,17 +38,17 @@
                     <navigationItem key="navigationItem" id="v5V-wW-PYV"/>
                     <connections>
                         <outlet property="tableView" destination="Som-Iy-43f" id="EFK-f5-btZ"/>
-                        <segue destination="ZTa-cu-qit" kind="show" id="RHV-eb-V0j"/>
+                        <segue destination="ZTa-cu-qit" kind="show" identifier="users_list_repos_list" id="RHV-eb-V0j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="123.68815592203899"/>
         </scene>
-        <!--View Controller-->
+        <!--Repos List-->
         <scene sceneID="idX-0y-WkN">
             <objects>
-                <viewController id="ZTa-cu-qit" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="repos_list" id="ZTa-cu-qit" customClass="ReposList" customModule="NickRaptisPullRequestViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Kcg-Pm-lk6"/>
                         <viewControllerLayoutGuide type="bottom" id="NyW-vK-Rp4"/>
@@ -56,12 +56,27 @@
                     <view key="view" contentMode="scaleToFill" id="und-n9-yDl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zm0-Wu-B1r">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zm0-Wu-B1r" firstAttribute="top" secondItem="Kcg-Pm-lk6" secondAttribute="bottom" id="UQQ-mm-oua"/>
+                            <constraint firstItem="zm0-Wu-B1r" firstAttribute="leading" secondItem="und-n9-yDl" secondAttribute="leading" id="W4Y-U3-IRL"/>
+                            <constraint firstItem="NyW-vK-Rp4" firstAttribute="top" secondItem="zm0-Wu-B1r" secondAttribute="bottom" id="eaZ-WJ-o4D"/>
+                            <constraint firstAttribute="trailing" secondItem="zm0-Wu-B1r" secondAttribute="trailing" id="wYF-Na-C4I"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="zm0-Wu-B1r" id="P5Z-wM-F1i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pOk-hx-5nJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1903" y="124"/>
+            <point key="canvasLocation" x="1901.5999999999999" y="123.68815592203899"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ND4-n7-mks">

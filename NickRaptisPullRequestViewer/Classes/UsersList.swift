@@ -30,7 +30,7 @@ class UsersList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
         tableView.dataSource = self
         tableView.delegate = self
         
-        usersFetcher.fetch(GithubAPI.usersURL)
+        usersFetcher.fetch(GithubAPI.shared.usersURL)
     }
     
     func fetchDidSucceed(fetcher: WebFetcher, result: WebResult) {
@@ -38,9 +38,6 @@ class UsersList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
         print("Users - Fetch Succeeded [\(result)]")
         
         if let data = FileUtils.parseJSON(usersFetcher.data) {
-            
-            print("User Data:\n\(data)")
-            
             if let userArray = data as? [[String: AnyObject]] {
                 
                 users.removeAll()
@@ -48,13 +45,9 @@ class UsersList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
                 for userInfo in userArray {
                     
                     let newUser = GithubUser()
-                    if let _id = userInfo["id"] as? Int {
-                        newUser.id = _id
-                    }
                     
-                    if let _login = userInfo["login"] as? String {
-                        newUser.login = _login
-                    }
+                    //newUser.loa
+                    
                     
                     //Valid user has a login.
                     if newUser.login.characters.count > 0 {
@@ -102,15 +95,35 @@ class UsersList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         
+        print("Selected Index Section[\(indexPath.section)] Row[\(indexPath.row)]")
+        
         if indexPath.row >= 0 && indexPath.row < users.count {
             let user = users[indexPath.row]
             
             print("Selected User[\(user.login)]")
             GithubAPI.shared.currentUser = user
             
+            tableView.deselectRow(at: indexPath, animated: true)
+            
+            self.performSegue(withIdentifier: "users_list_repos_list", sender: self)
         }
     }
     
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return nil
+    }
     /*
     // MARK: - Navigation
 
