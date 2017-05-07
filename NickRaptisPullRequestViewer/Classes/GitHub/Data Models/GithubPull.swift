@@ -17,7 +17,6 @@ class GithubPull: NSObject {
     
     var diffURL: String = ""
     
-    
     func load(_ info: [String: AnyObject]) {
         if let _id = info["id"] as? Int {
             id = _id
@@ -31,24 +30,6 @@ class GithubPull: NSObject {
         if let _diffURL = info["diff_url"] as? String {
             diffURL = _diffURL
         }
-        
-        // = open;
-        // = "Test Branch 2 Pull Request";
-        //"" = "https://github.com/nraptis/NickRaptisPullRequestViewer/pull/3.diff";
-    
     }
-    
-    
-    //state = open;
-    //title = "Test Branch 2 Pull Request";
-    //"diff_url" = "https://github.com/nraptis/NickRaptisPullRequestViewer/pull/3.diff";
-    
-    
-    
-    
-    
-    
-    
-    
 }
 

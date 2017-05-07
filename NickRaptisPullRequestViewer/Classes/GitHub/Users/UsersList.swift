@@ -34,14 +34,12 @@ class UsersList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
     }
     
     func fetchDidSucceed(fetcher: WebFetcher, result: WebResult) {
-        
-        print("Users - Fetch Succeeded [\(result)]")
-        
         if let data = FileUtils.parseJSON(usersFetcher.data) {
             if let userArray = data as? [[String: AnyObject]] {
                 
                 users.removeAll()
                 
+                //Add self to user list for debugging purposes.
                 let nraptis = GithubUser()
                 nraptis.login = "nraptis"
                 nraptis.id = 4358345
@@ -58,13 +56,8 @@ class UsersList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
                         users.append(newUser)
                     }
                 }
-            } else {
-                print("Error Out")
             }
-        } else {
-            print("Error Out")
         }
-        
         tableView.reloadData()
     }
     

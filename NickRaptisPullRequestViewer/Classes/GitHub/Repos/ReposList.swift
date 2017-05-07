@@ -25,17 +25,12 @@ class ReposList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.dataSource = self
         tableView.delegate = self
-        
         reposFetcher.fetch(GithubAPI.shared.reposURL)
     }
     
     func fetchDidSucceed(fetcher: WebFetcher, result: WebResult) {
-        
-        print("Repos - Fetch Succeeded [\(result)]")
-        
         if let data = FileUtils.parseJSON(reposFetcher.data) {
             if let reposArray = data as? [[String: AnyObject]] {
                 //Remove all previous repos if there are any..
@@ -59,7 +54,6 @@ class ReposList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
     
     func fetchDidFail(fetcher: WebFetcher, result: WebResult) {
         print("Users - Fetch Failed [\(result)]")
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,15 +76,10 @@ class ReposList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        print("Selected Index Section[\(indexPath.section)] Row[\(indexPath.row)]")
-        
         if indexPath.row >= 0 && indexPath.row < repos.count {
             let repo = repos[indexPath.row]
-            
             print("Selected Repo[\(repo.name)]")
             GithubAPI.shared.currentRepo = repo
-            
             self.performSegue(withIdentifier: "repos_list_pulls_list", sender: self)
         }
     }
@@ -110,14 +99,4 @@ class ReposList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return nil
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
