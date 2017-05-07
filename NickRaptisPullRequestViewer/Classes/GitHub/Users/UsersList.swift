@@ -26,37 +26,37 @@ class UsersList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.dataSource = self
         tableView.delegate = self
-        
         usersFetcher.fetch(GithubAPI.shared.usersURL)
     }
     
     func fetchDidSucceed(fetcher: WebFetcher, result: WebResult) {
         if let data = FileUtils.parseJSON(usersFetcher.data) {
             if let userArray = data as? [[String: AnyObject]] {
-                
                 users.removeAll()
                 
-                //Add self to user list for debugging purposes.
                 let nraptis = GithubUser()
                 nraptis.login = "nraptis"
                 nraptis.id = 4358345
                 users.append(nraptis)
                 
                 for userInfo in userArray {
-                    
                     let newUser = GithubUser()
                     newUser.load(userInfo)
                     
                     //Valid user has a login.
                     if newUser.login.characters.count > 0 {
-                        print("Appending User (\(newUser.login) id:\(newUser.id))")
                         users.append(newUser)
                     }
                 }
             }
+            
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+                let defaultIndexPath = IndexPath(row: 0, section: 0)
+                self.tableView.selectRow(at: defaultIndexPath, animated: true, scrollPosition: .top)
+            }
+            
         }
         tableView.reloadData()
     }
@@ -84,19 +84,11 @@ class UsersList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        print("Selected Index Section[\(indexPath.section)] Row[\(indexPath.row)]")
-        
         if indexPath.row >= 0 && indexPath.row < users.count {
             let user = users[indexPath.row]
-            
-            print("Selected User[\(user.login)]")
             GithubAPI.shared.currentUser = user
             
-            for i:Int in 0..<users.count {
-                let ip = IndexPath(row: i, section: 0)
-                tableView.deselectRow(at: ip, animated: true)
-            }
+            tableView.deselectRow(at: indexPath, animated: true)
             
             self.performSegue(withIdentifier: "users_list_repos_list", sender: self)
         }

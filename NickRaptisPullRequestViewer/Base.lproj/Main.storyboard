@@ -193,11 +193,30 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="v2M-7d-7QD" id="uE4-m8-DV4"/>
+                        <segue destination="gTA-59-t8x" kind="show" identifier="pulls_list_diff_files_list" id="yXX-9n-4M7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1oy-KQ-PL1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2709.5999999999999" y="123.68815592203899"/>
+        </scene>
+        <!--Diff Files List-->
+        <scene sceneID="cFV-Iw-u7m">
+            <objects>
+                <viewController id="gTA-59-t8x" customClass="DiffFilesList" customModule="NickRaptisPullRequestViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jr1-Ce-d0j"/>
+                        <viewControllerLayoutGuide type="bottom" id="E4w-2d-mUc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pRC-K3-P2Z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j3c-xI-3DT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3506" y="124"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ND4-n7-mks">
