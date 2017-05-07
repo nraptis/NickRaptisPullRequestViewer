@@ -25,17 +25,12 @@ class PullsList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.dataSource = self
         tableView.delegate = self
-        
         pullsFetcher.fetch(GithubAPI.shared.pullsURL)
     }
     
     func fetchDidSucceed(fetcher: WebFetcher, result: WebResult) {
-        
-        print("Pulls - Fetch Succeeded [\(result)]")
-        
         if let data = FileUtils.parseJSON(pullsFetcher.data) {
             
             print("\(data)")
@@ -75,10 +70,8 @@ class PullsList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
         if cell === nil {
             cell = PullTableViewCell(style: .default, reuseIdentifier: "pull_cell")
         }
-        
         cell!.labelTitle.text = pull.title
         cell!.labelState.text = pull.state
-        
         return cell!
     }
     
@@ -90,7 +83,16 @@ class PullsList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
         print("Selected Index Section[\(indexPath.section)] Row[\(indexPath.row)]")
         if indexPath.row >= 0 && indexPath.row < pulls.count {
             let pull = pulls[indexPath.row]
-            print("Selected Pull[\(pull.title)]")
+            
+            print("Selected Pull Title[\(pull.title)]")
+            print("Selected Pull State[\(pull.state)]")
+            print("Selected Pull URL[\(pull.diffURL)]")
+            
+            //Selected Index Section[0] Row[0]
+            //Selected Pull Title[Massive Sweeping Changes Pull]
+            //Selected Pull State[open]
+            //Selected Pull URL[https://github.com/nraptis/NickRaptisPullRequestViewer/pull/7.diff]
+            
             GithubAPI.shared.currentPull = pull
         }
     }
@@ -110,14 +112,4 @@ class PullsList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return nil
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
