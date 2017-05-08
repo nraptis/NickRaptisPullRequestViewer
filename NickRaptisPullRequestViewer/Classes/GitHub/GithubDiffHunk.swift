@@ -9,11 +9,12 @@
 import UIKit
 
 class GithubDiffHunk: NSObject {
-    var fromLine1: Int = 0
-    var fromLine2: Int = 0
     
-    var toLine1: Int = 0
-    var toLine2: Int = 0
+    var fromLineStart: Int = 0
+    var fromLineLength: Int = 0
+    
+    var toLineStart: Int = 0
+    var toLineLength: Int = 0
     
     var lines = [String]()
 }

@@ -87,9 +87,71 @@ extension String {
         return nil
     }
     
-    func removeLeadingSpaces() -> String {
-        return ""
+    
+    //let matches = matchesForRegexInText("[0-9]", text: string)
+    
+    func toIntArray() -> [Int] {
+        var result = [Int]()
+        let strings = matchesFor(regex: "-?[0-9][0-9]*")
+        for string in strings {
+            
+            if let intValue = Int(string) {
+                result.append(intValue)
+        
+                
+            }
+            
+            }
+        
+        //return matchesFor(regex: "(^-?0\\.[0-9]*[1-9]+[0-9]*$)|(^-?[1-9]+[0-9]*((\\.[0-9]*[1-9]+[0-9]*$)|(\\.[0-9]+)))|(^-?[1-9]+[0-9]*$)|(^0$){1}")
+        
+        
+        return result
     }
+    
+    
+    func matchesFor(regex: String) -> [String] {
+        do {
+            let regex = try NSRegularExpression(pattern: regex, options: [])
+            let string = self as NSString
+            let results = regex.matches(in: self, options: [], range: NSMakeRange(0, string.length))
+            return results.map { string.substring(with: $0.range)}
+        } catch let error as NSError {
+            print("invalid regex: \(error.localizedDescription)")
+            return []
+        }
+    }
+    
+    /*
+    func matchesForRegexInText(regex: String!, text: String!) -> [String] {
+        
+        
+        let regex = NSRegularExpression(pattern: regex, options: .init(rawValue: 0))
+        
+        
+        //options: nil, error: nil)!
+        let nsString = text as NSString
+        let results = regex.matchesInString(text,
+                                            options: nil, range: NSMakeRange(0, nsString.length))
+            as! [NSTextCheckingResult]
+        return map(results) { nsString.substringWithRange($0.range)}
+    }
+    */
+    
+    mutating func removeLeadingSpaces() {
+        //Implement
+    }
+    
+    mutating func removeTrailingSpaces() {
+        self = replacingOccurrences(of: "\\s+$", with: "", options: .regularExpression)
+    }
+    
+    mutating func removeLeadingAndTrailingSpaces() {
+        self = trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    
+    //
+    
     
 }
 

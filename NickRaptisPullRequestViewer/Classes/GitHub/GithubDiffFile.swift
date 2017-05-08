@@ -22,6 +22,8 @@ class GithubDiffFile: NSObject {
     
     func load(_ fileLines: [String]) -> Bool {
         lines.removeAll()
+        hunks.removeAll()
+        
         for line in fileLines {
             if line.length > 0 {
                 lines.append(line)
@@ -44,21 +46,75 @@ class GithubDiffFile: NSObject {
         
         for i in 1..<4 {
             let line = lines[i]
-            
             if let _ = line.findFirstI("Binary") {
                 isBinary = true
             }
         }
         
-        for line in lines {
         
-            //if line.startsWith("@@")
+        
+        
+        var lineIndex: Int = 0
+        
+        while lineIndex < lines.count {
             
+            var line = lines[lineIndex]
+            
+            if line.startsWith("@@") {
+                
+                let hunk = GithubDiffHunk()
+                hunks.append(hunk)
+                
+                var firstLine = line
+                
+                firstLine.removeBefore(2)
+                
+                if let trailingAmps = firstLine.findFirstI("@@") {
+                    
+                    var lineNumberSequence = firstLine
+                    
+                    lineNumberSequence.removeAfter(trailingAmps)
+                    
+                    lineNumberSequence.removeLeadingAndTrailingSpaces()
+                    
+                    let numberList = lineNumberSequence.toIntArray()
+                    
+                    print("Number Sequence: [\(lineNumberSequence)]")
+                    
+                    print("Number List: \(numberList)")
+                    
+                    if numberList.count >= 4 {
+                        
+                        hunk.fromLineStart = numberList[0]
+                        hunk.fromLineLength = numberList[1]
+                        
+                        hunk.toLineStart = numberList[2]
+                        hunk.toLineLength = numberList[3]
+                        
+                    } else if numberList.count == 2 {
+                     
+                        
+                    }
+                }
+                
+                lineIndex += 1
+                while lineIndex < lines.count {
+                    let hunkLine = lines[lineIndex]
+                    if hunkLine.startsWith("@@") {
+                        break
+                    } else {
+                        hunk.lines.append(hunkLine)
+                        lineIndex += 1
+                    }
+                }
+            } else {
+                lineIndex += 1
+            }
         }
         
+        print("Hunks: \(hunks.count)")
         
         //hunks
-        
         
         //class GithubDiffHunk: NSObject {
         //    var fromLine1: Int = 0
