@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D2872B21EC0179300B7820B /* GithubDiffLinePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2872B11EC0179300B7820B /* GithubDiffLinePair.swift */; };
+		0D2872B41EC01DF800B7820B /* GithubDiffHunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2872B31EC01DF800B7820B /* GithubDiffHunk.swift */; };
 		0D5194E21EBE95E70057DD0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5194CD1EBE95E70057DD0E /* AppDelegate.swift */; };
 		0D5194E31EBE95E70057DD0E /* GithubDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5194D01EBE95E70057DD0E /* GithubDiff.swift */; };
 		0D5194E41EBE95E70057DD0E /* GithubPull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5194D11EBE95E70057DD0E /* GithubPull.swift */; };
@@ -23,6 +25,9 @@
 		0D5194EF1EBE95E70057DD0E /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5194E01EBE95E70057DD0E /* FileUtils.swift */; };
 		0D5194F01EBE95E70057DD0E /* WebFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5194E11EBE95E70057DD0E /* WebFetcher.swift */; };
 		0D5194F21EBFB6450057DD0E /* DiffFilesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5194F11EBFB6450057DD0E /* DiffFilesList.swift */; };
+		0D59AB4D1EBFCA11004F9566 /* String+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D59AB4C1EBFCA11004F9566 /* String+Parsing.swift */; };
+		0D59AB4F1EBFE962004F9566 /* GithubDiffFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D59AB4E1EBFE962004F9566 /* GithubDiffFile.swift */; };
+		0D59AB511EBFEEFD004F9566 /* DiffLineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D59AB501EBFEEFD004F9566 /* DiffLineTableViewCell.swift */; };
 		C22788591EBBF86300F1E7B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C22788571EBBF86300F1E7B9 /* Main.storyboard */; };
 		C227885C1EBBF86300F1E7B9 /* NickRaptisPullRequestViewer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C227885A1EBBF86300F1E7B9 /* NickRaptisPullRequestViewer.xcdatamodeld */; };
 		C227885E1EBBF86300F1E7B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C227885D1EBBF86300F1E7B9 /* Assets.xcassets */; };
@@ -49,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D2872B11EC0179300B7820B /* GithubDiffLinePair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubDiffLinePair.swift; sourceTree = "<group>"; };
+		0D2872B31EC01DF800B7820B /* GithubDiffHunk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubDiffHunk.swift; sourceTree = "<group>"; };
 		0D5194CD1EBE95E70057DD0E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D5194D01EBE95E70057DD0E /* GithubDiff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubDiff.swift; sourceTree = "<group>"; };
 		0D5194D11EBE95E70057DD0E /* GithubPull.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubPull.swift; sourceTree = "<group>"; };
@@ -65,6 +72,9 @@
 		0D5194E01EBE95E70057DD0E /* FileUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		0D5194E11EBE95E70057DD0E /* WebFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebFetcher.swift; sourceTree = "<group>"; };
 		0D5194F11EBFB6450057DD0E /* DiffFilesList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiffFilesList.swift; sourceTree = "<group>"; };
+		0D59AB4C1EBFCA11004F9566 /* String+Parsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Parsing.swift"; path = "NickRaptisPullRequestViewer/Classes/String+Parsing.swift"; sourceTree = SOURCE_ROOT; };
+		0D59AB4E1EBFE962004F9566 /* GithubDiffFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubDiffFile.swift; sourceTree = "<group>"; };
+		0D59AB501EBFEEFD004F9566 /* DiffLineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiffLineTableViewCell.swift; sourceTree = "<group>"; };
 		C22788501EBBF86300F1E7B9 /* NickRaptisPullRequestViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NickRaptisPullRequestViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C22788581EBBF86300F1E7B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C227885B1EBBF86300F1E7B9 /* NickRaptisPullRequestViewer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NickRaptisPullRequestViewer.xcdatamodel; sourceTree = "<group>"; };
@@ -125,6 +135,11 @@
 				0D5194D81EBE95E70057DD0E /* Repos */,
 				0D5194DB1EBE95E70057DD0E /* Users */,
 				0D5194F11EBFB6450057DD0E /* DiffFilesList.swift */,
+				0D59AB4C1EBFCA11004F9566 /* String+Parsing.swift */,
+				0D59AB4E1EBFE962004F9566 /* GithubDiffFile.swift */,
+				0D59AB501EBFEEFD004F9566 /* DiffLineTableViewCell.swift */,
+				0D2872B11EC0179300B7820B /* GithubDiffLinePair.swift */,
+				0D2872B31EC01DF800B7820B /* GithubDiffHunk.swift */,
 			);
 			path = GitHub;
 			sourceTree = "<group>";
@@ -472,12 +487,17 @@
 				0D5194F21EBFB6450057DD0E /* DiffFilesList.swift in Sources */,
 				0D5194E21EBE95E70057DD0E /* AppDelegate.swift in Sources */,
 				0D5194E91EBE95E70057DD0E /* PullTableViewCell.swift in Sources */,
+				0D2872B41EC01DF800B7820B /* GithubDiffHunk.swift in Sources */,
 				0D5194E61EBE95E70057DD0E /* GithubUser.swift in Sources */,
+				0D59AB4F1EBFE962004F9566 /* GithubDiffFile.swift in Sources */,
 				0D5194E31EBE95E70057DD0E /* GithubDiff.swift in Sources */,
+				0D59AB511EBFEEFD004F9566 /* DiffLineTableViewCell.swift in Sources */,
 				0D5194ED1EBE95E70057DD0E /* RootViewController.swift in Sources */,
 				0D5194EE1EBE95E70057DD0E /* Device.swift in Sources */,
 				0D5194EB1EBE95E70057DD0E /* RepoTableViewCell.swift in Sources */,
+				0D2872B21EC0179300B7820B /* GithubDiffLinePair.swift in Sources */,
 				0D5194E51EBE95E70057DD0E /* GithubRepo.swift in Sources */,
+				0D59AB4D1EBFCA11004F9566 /* String+Parsing.swift in Sources */,
 				C227885C1EBBF86300F1E7B9 /* NickRaptisPullRequestViewer.xcdatamodeld in Sources */,
 				0D5194EF1EBE95E70057DD0E /* FileUtils.swift in Sources */,
 				0D5194F01EBE95E70057DD0E /* WebFetcher.swift in Sources */,
