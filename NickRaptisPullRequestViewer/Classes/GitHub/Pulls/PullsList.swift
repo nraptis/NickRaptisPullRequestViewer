@@ -32,19 +32,14 @@ class PullsList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
     
     func fetchDidSucceed(fetcher: WebFetcher, result: WebResult) {
         if let data = FileUtils.parseJSON(pullsFetcher.data) {
-            
-            print("\(data)")
-            
             if let pullsArray = data as? [[String: AnyObject]] {
                 //Remove all previous pulls if there are any..
                 pulls.removeAll()
-                
                 //Parse repo list.
                 for repoInfo in pullsArray {
                     let pull = GithubPull()
                     //Load the JSON data.
                     pull.load(repoInfo)
-                    
                     //If it's valid, add it to the list.
                     if pull.title.characters.count > 0 {
                         pulls.append(pull)
@@ -57,7 +52,6 @@ class PullsList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
     
     func fetchDidFail(fetcher: WebFetcher, result: WebResult) {
         print("Pulls - Fetch Failed [\(result)]")
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -80,7 +74,6 @@ class PullsList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Selected Index Section[\(indexPath.section)] Row[\(indexPath.row)]")
         if indexPath.row >= 0 && indexPath.row < pulls.count {
             let pull = pulls[indexPath.row]
             
@@ -88,28 +81,14 @@ class PullsList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
             print("Selected Pull State[\(pull.state)]")
             print("Selected Pull URL[\(pull.diffURL)]")
             
+            GithubAPI.shared.currentPull = pull
+            
             //Selected Index Section[0] Row[0]
             //Selected Pull Title[Massive Sweeping Changes Pull]
             //Selected Pull State[open]
             //Selected Pull URL[https://github.com/nraptis/NickRaptisPullRequestViewer/pull/7.diff]
             
-            GithubAPI.shared.currentPull = pull
+            self.performSegue(withIdentifier: "pulls_list_diff_files_list", sender: self)
         }
-    }
-    
-    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.0
-    }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0.0
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return nil
-    }
-    
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return nil
     }
 }

@@ -78,7 +78,6 @@ class ReposList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row >= 0 && indexPath.row < repos.count {
             let repo = repos[indexPath.row]
-            print("Selected Repo[\(repo.name)]")
             GithubAPI.shared.currentRepo = repo
             self.performSegue(withIdentifier: "repos_list_pulls_list", sender: self)
         }
