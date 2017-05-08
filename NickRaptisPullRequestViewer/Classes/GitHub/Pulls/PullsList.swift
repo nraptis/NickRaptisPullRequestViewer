@@ -76,18 +76,7 @@ class PullsList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row >= 0 && indexPath.row < pulls.count {
             let pull = pulls[indexPath.row]
-            
-            print("Selected Pull Title[\(pull.title)]")
-            print("Selected Pull State[\(pull.state)]")
-            print("Selected Pull URL[\(pull.diffURL)]")
-            
             GithubAPI.shared.currentPull = pull
-            
-            //Selected Index Section[0] Row[0]
-            //Selected Pull Title[Massive Sweeping Changes Pull]
-            //Selected Pull State[open]
-            //Selected Pull URL[https://github.com/nraptis/NickRaptisPullRequestViewer/pull/7.diff]
-            
             self.performSegue(withIdentifier: "pulls_list_diff_files_list", sender: self)
         }
     }

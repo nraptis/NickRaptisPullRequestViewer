@@ -51,9 +51,6 @@ class GithubAPI : NSObject
         }
     }
     
-    //https://api.github.com/repos/nraptis/NickRaptisPullRequestViewer/pulls
-    //https://api.github.com/users/nraptis/repos
-    
     //The currently selected user. (which we will view repositories for)
     var currentUser: GithubUser?
     
