@@ -36,6 +36,11 @@ class UsersList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
             if let userArray = data as? [[String: AnyObject]] {
                 users.removeAll()
                 
+                let magicalpanda = GithubUser()
+                magicalpanda.login = "magicalpanda"
+                magicalpanda.id = 4358346
+                users.append(magicalpanda)
+                
                 let nraptis = GithubUser()
                 nraptis.login = "nraptis"
                 nraptis.id = 4358345
@@ -51,12 +56,6 @@ class UsersList: UIViewController, WebFetcherDelegate, UITableViewDelegate, UITa
                     }
                 }
             }
-            
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
-                let defaultIndexPath = IndexPath(row: 0, section: 0)
-                self.tableView.selectRow(at: defaultIndexPath, animated: true, scrollPosition: .top)
-            }
-            
         }
         tableView.reloadData()
     }

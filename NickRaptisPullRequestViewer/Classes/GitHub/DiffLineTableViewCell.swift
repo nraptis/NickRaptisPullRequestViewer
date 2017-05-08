@@ -13,11 +13,11 @@ class DiffLineTableViewCell: UITableViewCell {
     @IBOutlet weak var leftBackground: UIView!
     @IBOutlet weak var rightBackground: UIView!
     
-    @IBOutlet weak var leftLineNumberLabel: UIView!
-    @IBOutlet weak var rightLineNumberLabel: UIView!
+    @IBOutlet weak var leftLineNumberLabel: UILabel!
+    @IBOutlet weak var rightLineNumberLabel: UILabel!
     
-    @IBOutlet weak var leftLineLabel: UIView!
-    @IBOutlet weak var rightLineLabel: UIView!
+    @IBOutlet weak var leftLineLabel: UILabel!
+    @IBOutlet weak var rightLineLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

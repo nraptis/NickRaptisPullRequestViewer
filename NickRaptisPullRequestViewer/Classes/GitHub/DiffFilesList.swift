@@ -106,15 +106,52 @@ class DiffFilesList: UIViewController, WebFetcherDelegate, UITableViewDelegate, 
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        let diffFile = diffFiles[section]
+        return diffFile.linePairs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let diffFile = diffFiles[indexPath.section]
+        let linePair = diffFile.linePairs[indexPath.row]
+
+        
+        
+        
         //let pull = pulls[indexPath.row]
-        var cell = tableView.dequeueReusableCell(withIdentifier: "pull_cell") as? PullTableViewCell
+        var cell = tableView.dequeueReusableCell(withIdentifier: "diff_line_cell") as? DiffLineTableViewCell
         if cell === nil {
-            cell = PullTableViewCell(style: .default, reuseIdentifier: "pull_cell")
+            cell = DiffLineTableViewCell(style: .default, reuseIdentifier: "diff_line_cell")
         }
+        
+        
+        if linePair.leftHighlight {
+            cell!.leftBackground.backgroundColor = UIColor(red: 1.0, green: 0.92, blue: 0.92, alpha: 1.0)
+        } else {
+            cell!.leftBackground.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        }
+        
+        if linePair.rightHighlight {
+            cell!.rightBackground.backgroundColor = UIColor(red: 0.92, green: 1.0, blue: 0.92, alpha: 1.0)
+        } else {
+            cell!.rightBackground.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        }
+        
+        cell!.leftLineNumberLabel.text = ""
+        cell!.rightLineNumberLabel.text = ""
+        
+        if linePair.leftLineNumber >= 0 {
+            cell!.leftLineNumberLabel.text = "\(linePair.leftLineNumber)"
+        }
+        
+        if linePair.rightLineNumber >= 0 {
+            cell!.rightLineNumberLabel.text = "\(linePair.rightLineNumber)"
+        }
+        
+        cell!.leftLineLabel.text = linePair.leftLine
+        cell!.rightLineLabel.text = linePair.rightLine
+        
+        
         //cell!.labelTitle.text = pull.title
         //cell!.labelState.text = pull.state
         return cell!

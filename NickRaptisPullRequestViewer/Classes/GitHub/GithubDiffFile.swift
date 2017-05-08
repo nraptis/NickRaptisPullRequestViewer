@@ -20,9 +20,13 @@ class GithubDiffFile: NSObject {
     //Broken down into "hunks."
     var hunks = [GithubDiffHunk]()
     
+    var linePairs = [GithubDiffLinePair]()
+    
+    
     func load(_ fileLines: [String]) -> Bool {
         lines.removeAll()
         hunks.removeAll()
+        linePairs.removeAll()
         
         for line in fileLines {
             if line.length > 0 {
@@ -80,19 +84,22 @@ class GithubDiffFile: NSObject {
                     let numberList = lineNumberSequence.toIntArray()
                     
                     print("Number Sequence: [\(lineNumberSequence)]")
-                    
                     print("Number List: \(numberList)")
                     
                     if numberList.count >= 4 {
                         
-                        hunk.fromLineStart = numberList[0]
-                        hunk.fromLineLength = numberList[1]
-                        
-                        hunk.toLineStart = numberList[2]
-                        hunk.toLineLength = numberList[3]
-                        
+                        if numberList[2] < 0 {
+                            hunk.fromLineStart = abs(numberList[2])
+                            hunk.fromLineLength = abs(numberList[3])
+                            hunk.toLineStart = abs(numberList[0])
+                            hunk.toLineLength = abs(numberList[1])
+                        } else {
+                            hunk.fromLineStart = abs(numberList[0])
+                            hunk.fromLineLength = abs(numberList[1])
+                            hunk.toLineStart = abs(numberList[2])
+                            hunk.toLineLength = abs(numberList[3])
+                        }
                     } else if numberList.count == 2 {
-                     
                         
                     }
                 }
@@ -113,6 +120,22 @@ class GithubDiffFile: NSObject {
         }
         
         print("Hunks: \(hunks.count)")
+        
+        
+        for hunk in hunks {
+            hunk.findLinePairs()
+            
+            for linePair in hunk.linePairs {
+                linePairs.append(linePair)
+            }
+            
+        }
+        
+        //linePairs.removeAll()
+        
+        
+        //linePairs
+        
         
         //hunks
         
