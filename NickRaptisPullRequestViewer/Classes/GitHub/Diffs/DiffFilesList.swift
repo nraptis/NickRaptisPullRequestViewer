@@ -43,21 +43,9 @@ class DiffFilesList: UIViewController, WebFetcherDelegate, UITableViewDelegate, 
         
         if let data = diffFetcher.data {
             if let diff = String(bytes: data, encoding: .utf8) {
-                //print("Diff Data: \n~~~~~~ ~~~~~~ ~~~~~~\n");
-                //print(diff)
-                //print("\n~~~~~~ ~~~~~~ ~~~~~~\n")
-                
                 parseDiff(diff)
             }
         }
-        
-        print("****   ****   ****")
-        print("****   ****   ****")
-        
-        for diffFile in diffFiles {
-            diffFile.printInfo()
-        }
-        
         
         tableView.reloadData()
     }
@@ -75,27 +63,19 @@ class DiffFilesList: UIViewController, WebFetcherDelegate, UITableViewDelegate, 
         
         for i:Int in 0..<lines.count {
             let line = lines[i]
-            //print("Line \(i + 1): \(line)")
-            
             if line.startsWith("diff --git") {
                 if fileLines.count > 0 {
                     addFile(fileLines)
                     fileLines.removeAll()
                 }
             }
-            
             fileLines.append(line)
-            
-                        
-            
         }
         
         if fileLines.count > 0 {
             addFile(fileLines)
             fileLines.removeAll()
         }
-        
-        
     }
     
     func addFile(_ lines: [String]) {
@@ -115,15 +95,10 @@ class DiffFilesList: UIViewController, WebFetcherDelegate, UITableViewDelegate, 
         let diffFile = diffFiles[indexPath.section]
         let linePair = diffFile.linePairs[indexPath.row]
 
-        
-        
-        
-        //let pull = pulls[indexPath.row]
         var cell = tableView.dequeueReusableCell(withIdentifier: "diff_line_cell") as? DiffLineTableViewCell
         if cell === nil {
             cell = DiffLineTableViewCell(style: .default, reuseIdentifier: "diff_line_cell")
         }
-        
         
         if linePair.leftHighlight {
             cell!.leftBackground.backgroundColor = UIColor(red: 1.0, green: 0.92, blue: 0.92, alpha: 1.0)
@@ -151,9 +126,6 @@ class DiffFilesList: UIViewController, WebFetcherDelegate, UITableViewDelegate, 
         cell!.leftLineLabel.text = linePair.leftLine
         cell!.rightLineLabel.text = linePair.rightLine
         
-        
-        //cell!.labelTitle.text = pull.title
-        //cell!.labelState.text = pull.state
         return cell!
     }
     

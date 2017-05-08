@@ -9,8 +9,6 @@
 import UIKit
 
 class PullTableViewCell: UITableViewCell {
-
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var labelState: UILabel!
-    
 }

@@ -125,7 +125,7 @@ open class FileUtils
             if FileUtils.saveData(data: &imageData, filePath: filePath) {
                 return true
             } else {
-                print("Unable to save image (\(image!.size.width)x\(image!.size.height)) [\(filePath)]")
+                
             }
         }
         return false
